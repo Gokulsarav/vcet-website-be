@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'user_management',
     'corsheaders',
+    'lab_management',
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
