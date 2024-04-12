@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'user_management',
     'corsheaders',
     'lab_management',
+    'rest_framework',
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -68,6 +69,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
             ],
         },
+        
     },
 ]
 

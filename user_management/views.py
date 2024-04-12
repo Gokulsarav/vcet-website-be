@@ -5,6 +5,7 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from .models import Email
 from .serializers import EmailSerializer
+from django.http import HttpResponse
 
 @api_view(['POST'])
 def save_email(request):
@@ -13,3 +14,6 @@ def save_email(request):
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+def show_page(request):
+    return HttpResponse("Email will save")
