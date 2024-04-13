@@ -1,13 +1,11 @@
-# user_management/views.py
 
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from .models import Email
 from .serializers import EmailSerializer
-from django.http import HttpResponse
 
-@api_view(['POST'])
+@api_view(['POST'])   # building RESTful APIs.
 def save_email(request):
     serializer = EmailSerializer(data=request.data)
     if serializer.is_valid():
@@ -15,5 +13,3 @@ def save_email(request):
         return Response(serializer.data, status=status.HTTP_201_CREATED)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-def show_page(request):
-    return HttpResponse("Email will save")
